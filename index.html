@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="style.css">
+    <title>WeatherApp</title>
+</head>
+
+<body>
+    <!-- Header --> 
+    <div class="header">
+        <a href="#" class="logo">WeatherApp</a>
+    </div>
+    
+    <!-- Main Weather Container -->
+    <div class="main-weather-container">
+        <div class="main-weather-card">
+            <form action="" class="search-form">
+                <input type="search" class="search-bar" placeholder="Search City...">
+                <button class="search-btn" type="submit">
+                    <i class="material-icons">search</i>
+                </button>
+            </form>
+    
+            <div class="city-name-section">
+                <h2 class="city">Bengaluru</h2>
+                <p class="date">Jan 17, 2024</p>
+            </div>
+            <div class="temperature-info">
+                <div class="descritpion">
+                    <i class="material-icons">sunny</i>
+                    <span class="weather-description">Clear Sky</span>
+                </div>
+                <div class="temperature">25°</div>
+            </div>
+    
+            <div class="additional-info">
+                <div class="wind-info">
+                    <i class="material-icons">air</i>
+                    <div>
+                        <h3 class="wind-speed">4 KM/H</h3>
+                        <p class="wind-label">Wind</p>
+                    </div>
+                </div>
+            </div>
+            <div class="humidity-info">
+                <i class="material-icons">water_drop</i>
+                <div>
+                    <h3 class="humidity">45%</h3>
+                    <p class="humidity-label">Humidity</p>
+                </div>
+            </div>
+            <div class="visibility-info">
+                <i class="material-icons">air</i>
+                <div>
+                    <h3 class="visibility-distance">800m</h3>
+                    <p class="visibility-label">Visibility</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<script src="script.js"></script>
+</body>
+</html>
