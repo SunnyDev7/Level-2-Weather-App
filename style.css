@@ -1,0 +1,152 @@
+body{
+    background-color: black;
+    font-family: 'Noto Sans', sans-serif;
+    color: whitesmoke;
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    background-color: rgb(23, 22, 22);
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+}
+
+.logo{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+body .main-weather-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8em;
+}
+
+.main-weather-card{
+    width: 50%;
+}
+
+.main-weather-card{
+    background-color: rgb(23, 22, 22);
+    width: 60%;
+    margin: 1em;
+    padding: 1em;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+}
+
+.search-form{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+input{
+    flex: 1;
+    padding: 1em;
+    border: 2px solid black;
+    border-radius: 0.9em;
+}
+
+.search-btn{
+    background-color: whitesmoke;
+    border: none;
+    padding: 0.6em;
+    border-radius: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.search-btn:hover{
+    background-color:cadetblue;
+    color: whitesmoke;
+}
+
+.city-name-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+    margin: 0.7em;
+}
+
+.city-name-section .city{
+    padding: 0%;
+    margin-bottom: 3%;
+    font-size: 2em;
+}
+
+.city-name-section .date{
+    margin: 0%;
+    padding: 2%;
+    background-color: black;
+    border-radius: 1em;
+    box-shadow: 0px 0px 2px darkgrey;
+
+}
+
+.temperature-info{
+    margin: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 1em;
+}
+
+.temperature-info .temperature{
+    font-size: 5em;
+}
+
+.temperature-info .descritpion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.7em;
+}
+
+.temperature-info .descritpion i{
+    font-size: 1.5rem;
+}
+
+.temperature-info .descritpion span{
+    font-size: 1.5rem;
+}
+
+.additional-info{
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.wind-info, 
+.humidity-info, 
+.visibility-info {
+    background-color: black;
+    width: 7em;
+    border-radius: 1em;
+    padding-top: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.7em;
+    box-shadow: 0px 0px 2px darkgrey;
+    text-align: center;
+}
+
+.additional-info .material-icons{
+    font-size: 3em;
+}
+
+
