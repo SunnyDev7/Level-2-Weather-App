@@ -12,7 +12,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1em;
+    font-size: 1.2em;
 }
 
 .logo{
@@ -26,10 +26,12 @@ body .main-weather-container{
     justify-content: center;
     align-items: center;
     font-size: 0.8em;
+    margin-top: 2em;
 }
 
 .main-weather-card{
     width: 50%;
+    border-radius: 1em;
 }
 
 .main-weather-card{
