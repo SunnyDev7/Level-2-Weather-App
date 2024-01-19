@@ -32,17 +32,11 @@ body .main-weather-container{
 .main-weather-card{
     width: 50%;
     border-radius: 1em;
-}
-
-.main-weather-card{
-    background-color: rgb(23, 22, 22);
+    /* background-color: rgb(23, 22, 22); */
+    background-image: linear-gradient(135deg, #00feba, #5b548a);
     width: 60%;
     margin: 1em;
     padding: 1em;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
 }
 
 .search-form{
@@ -54,14 +48,15 @@ body .main-weather-container{
 input{
     flex: 1;
     padding: 1em;
-    border: 2px solid black;
     border-radius: 0.9em;
+    margin-right: 0.3em;
+    border: none;
 }
 
 .search-btn{
     background-color: whitesmoke;
     border: none;
-    padding: 0.6em;
+    padding: 0.5em;
     border-radius: 0.9em;
     cursor: pointer;
     transition: background-color 0.2s ease;
@@ -84,16 +79,16 @@ input{
 .city-name-section .city{
     padding: 0%;
     margin-bottom: 3%;
-    font-size: 2em;
+    margin-top: 2%;
+    font-size: 3em;
 }
 
 .city-name-section .date{
     margin: 0%;
     padding: 2%;
-    background-color: black;
+    background-color: rgb(23, 22, 22);
     border-radius: 1em;
     box-shadow: 0px 0px 2px darkgrey;
-
 }
 
 .temperature-info{
@@ -134,7 +129,8 @@ input{
 .wind-info, 
 .humidity-info, 
 .visibility-info {
-    background-color: black;
+    background-color: whitesmoke;
+    color: rgb(23, 22, 22);
     width: 7em;
     border-radius: 1em;
     padding-top: 1em;
@@ -149,6 +145,7 @@ input{
 
 .additional-info .material-icons{
     font-size: 3em;
+    color: rgb(23, 22, 22);
 }
 
 

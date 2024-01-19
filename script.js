@@ -42,7 +42,7 @@ function updateWeatheronUI(data){
     humidityElement.textContent = `${data.main.humidity}%`;
     visibilityElement.textContent = `${data.visibility/1000} km`;
     descriptionElement.textContent = data.weather[0].description;
-
+    
     const currentDate = new Date();
     dateElement.textContent = currentDate.toDateString();
 };
@@ -59,12 +59,4 @@ const formElement = document.querySelector(".search-form");
             fetchWeatherByCity(city);
             searchBarElement.value = '';
         }
-})
-
-
-
-
-
-
-
-
+});
