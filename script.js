@@ -4,6 +4,11 @@ const baseUrlTwo = 'https://api.openweathermap.org/data/2.5/forecast';
 const units = 'metric'; // Setting the units to metric to get Celsius
 let barChart;
 
+document.addEventListener('DOMContentLoaded', function () {
+  // On page load, create the chart with placeholder data
+  plotForecastChart([], []);
+});
+
 // Function to fetch weather data by city name
 async function fetchWeatherByCity(cityName) {
 
