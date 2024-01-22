@@ -42,6 +42,7 @@ async function fetchWeatherByCity(cityName) {
       // Data retrieval successful
       console.log('Forecast Weather data:', forecastData);
       updateForecastUI(forecastData);
+      plotForecastChart(forecastData);
     } else {
       // Data retrieval failed
       console.error('Error fetching weather data:', forecastData.message);
@@ -179,15 +180,21 @@ function updateForecastUI(data){
 }
 
 const formElement = document.querySelector(".search-form");
-    const searchBarElement = document.querySelector('.search-bar')
+const searchBarElement = document.querySelector('.search-bar');
+const searchButtonIcon = document.querySelector('.search-btn i');
 
-    formElement.addEventListener('submit', function(e){
-        e.preventDefault();
+function handleSearch() {
+    const city = searchBarElement.value.trim();
 
-        const city = searchBarElement.value;
+    if (city) {
+        fetchWeatherByCity(city);
+        searchBarElement.value = '';
+    }
+}
 
-        if(city !== ""){
-            fetchWeatherByCity(city);
-            searchBarElement.value = '';
-        }
+formElement.addEventListener('submit', function (e) {
+    e.preventDefault();
+    handleSearch();
 });
+
+searchButtonIcon.addEventListener('click', handleSearch);
