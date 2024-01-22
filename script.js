@@ -63,7 +63,7 @@ function updateMainUI(data){
     let descriptionIcon = document.querySelector(".descritpion i");
     
     cityElement.textContent = data.name;
-    temperatureElement.textContent = `${Math.round(data.main.temp)}`;
+    temperatureElement.textContent = `${Math.round(data.main.temp)}°`;
     windSpeedElement.textContent = `${data.wind.speed} km/h`;
     humidityElement.textContent = `${data.main.humidity}%`;
     visibilityElement.textContent = `${data.visibility/1000} km`;
@@ -96,57 +96,69 @@ function updateForecastUI(data){
   //Displaying data on weather today card
   let cardOneIcon = document.querySelector(".card-one i");
   let cardOneTemp = document.querySelector(".temp-one");
+  let cardFeelOne = document.querySelector(".feel-one");
   let cardOneDescription = document.querySelector(".time-one");
 
   let cardTwoIcon = document.querySelector(".card-two i");
   let cardTwoTemp = document.querySelector(".temp-two");
+  let cardFeelTwo = document.querySelector(".feel-two");
   let cardTwoDescription = document.querySelector(".time-two");
 
   let cardThreeIcon = document.querySelector(".card-three i");
   let cardThreeTemp = document.querySelector(".temp-three");
+  let cardFeelThree = document.querySelector(".feel-three");
   let cardThreeDescription = document.querySelector(".time-three");
 
   let cardFourIcon = document.querySelector(".card-four i");
   let cardFourTemp = document.querySelector(".temp-four");
+  let cardFeelFour = document.querySelector(".feel-four");
   let cardFourDescription = document.querySelector(".time-four");
 
   let cardFiveIcon = document.querySelector(".card-five i");
   let cardFiveTemp = document.querySelector(".temp-five");
+  let cardFeelFive = document.querySelector(".feel-five");
   let cardFiveDescription = document.querySelector(".time-five");
 
   let cardSixIcon = document.querySelector(".card-six i");
   let cardSixTemp = document.querySelector(".temp-six");
+  let cardSixFeel = document.querySelector(".feel-six");
   let cardSixDescription = document.querySelector(".time-six");
-
+  
   const forecastIconOne = getForecastIcon(data.list[0].weather[0].main);
   cardOneIcon.innerHTML = `<i class="material-icons">${forecastIconOne}</i>`;
-  cardOneTemp.textContent = data.list[0].main.temp;
-  cardOneDescription.textContent = data.list[0].dt_txt.split(' ')[1].substring(0, 5);
+  cardOneTemp.textContent = "Temp: "+data.list[0].main.temp;
+  cardFeelOne.textContent = "Feels like: "+data.list[0].main.feels_like;
+  cardOneDescription.textContent = "Time: "+data.list[0].dt_txt.split(' ')[1].substring(0, 5);
   
   const forecastIconTwo = getForecastIcon(data.list[1].weather[0].main);
   cardTwoIcon.innerHTML = `<i class="material-icons">${forecastIconTwo}</i>`;
-  cardTwoTemp.textContent = data.list[1].main.temp;
-  cardTwoDescription.textContent = data.list[1].dt_txt.split(' ')[1].substring(0, 5);
+  cardTwoTemp.textContent = "Temp: "+data.list[1].main.temp;
+  cardFeelTwo.textContent = "Feels like: "+data.list[1].main.feels_like;
+  cardTwoDescription.textContent = "Time: "+data.list[1].dt_txt.split(' ')[1].substring(0, 5);
 
   const forecastIconThree = getForecastIcon(data.list[2].weather[0].main);
   cardThreeIcon.innerHTML = `<i class="material-icons">${forecastIconThree}</i>`;
-  cardThreeTemp.textContent = data.list[2].main.temp;
-  cardThreeDescription.textContent = data.list[2].dt_txt.split(' ')[1].substring(0, 5);
+  cardThreeTemp.textContent = "Temp: "+data.list[2].main.temp;
+  cardFeelThree.textContent = "Feels like: "+data.list[2].main.feels_like;
+  cardThreeDescription.textContent = "Time: "+data.list[2].dt_txt.split(' ')[1].substring(0, 5);
 
   const forecastIconFour = getForecastIcon(data.list[3].weather[0].main);
   cardFourIcon.innerHTML = `<i class="material-icons">${forecastIconFour}</i>`;
-  cardFourTemp.textContent = data.list[3].main.temp;
-  cardFourDescription.textContent = data.list[3].dt_txt.split(' ')[1].substring(0, 5);
+  cardFourTemp.textContent = "Temp: "+data.list[3].main.temp;
+  cardFeelFour.textContent = "Feels like: "+data.list[3].main.feels_like;
+  cardFourDescription.textContent = "Time: "+data.list[3].dt_txt.split(' ')[1].substring(0, 5);
 
   const forecastIconFive = getForecastIcon(data.list[4].weather[0].main);
   cardFiveIcon.innerHTML = `<i class="material-icons">${forecastIconFive}</i>`;
-  cardFiveTemp.textContent = data.list[4].main.temp;
-  cardFiveDescription.textContent = data.list[4].dt_txt.split(' ')[1].substring(0, 5);
+  cardFiveTemp.textContent = "Temp: "+data.list[4].main.temp;
+  cardFeelFive.textContent = "Feels like: "+data.list[4].main.feels_like;
+  cardFiveDescription.textContent = "Time: "+data.list[4].dt_txt.split(' ')[1].substring(0, 5);
 
   const forecastIconSix = getForecastIcon(data.list[5].weather[0].main);
   cardSixIcon.innerHTML = `<i class="material-icons">${forecastIconSix}</i>`;
-  cardSixTemp.textContent = data.list[5].main.temp;
-  cardSixDescription.textContent = data.list[5].dt_txt.split(' ')[1].substring(0, 5);
+  cardSixTemp.textContent = "Temp: "+data.list[5].main.temp;
+  cardSixFeel.textContent = "Feels like: "+data.list[5].main.feels_like;
+  cardSixDescription.textContent = "Time: "+data.list[5].dt_txt.split(' ')[1].substring(0, 5);
 
   function getForecastIcon(weatherCondition){
     const iconMap = {

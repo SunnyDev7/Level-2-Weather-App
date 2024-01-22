@@ -31,16 +31,6 @@ body .main-weather-container{
     height: 85%;
 }
 
-/* body .main-weather-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 0.8em;
-    margin: 2em 0 0 0;
-    height: 100%;
-} */
-
 .main-weather-card{
     width: 30%;
     height: 85%;
@@ -132,11 +122,10 @@ input{
 }
 
 .additional-info{
-    margin-top: 1em;
+    margin-top: 3em;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding-top: 4em;
 }
 
 .wind-info, 
@@ -178,24 +167,29 @@ input{
     align-items: center;
     padding: 0;
     margin: 0.7em;
+    font-size: 2em;
 }
 
 .forecast-title-section .title{
-    font-size: 2.7em;
+    font-size: 2.4em;
 }
 
 .card-grid-container{
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin-top: 2.7em;
 }
 
 .card-row-one, 
 .card-row-two{
-    margin-top: 1em;
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+.card-row-two{
+    margin-top: 1em;
 }
 
 .card-one,
@@ -206,7 +200,7 @@ input{
 .card-six{
     background-color: whitesmoke;
     color: rgb(23, 22, 22);
-    width: 9em;
+    width: 20em;
     border-radius: 1em;
     padding-top: 1em;
     display: flex;
@@ -218,39 +212,26 @@ input{
     text-align: center;
 }
 
+.card-one i,
+.card-two i,
+.card-three i,
+.card-four i,
+.card-five i,
+.card-six i{
+    font-size: 1.8em;
+}
 
 .card-row-one .material-icons{
-    font-size: 2em;
     color: rgb(23, 22, 22);
 }
 
 .card-row-two .material-icons{
-    font-size: 2em;
     color: rgb(23, 22, 22);
 }
 
 .a{
     margin: 0;
 }
-
-
-/* Media Queries for Responsive Design */
-/* @media only screen and (max-width: 1366px) {
-    
-    body .main-weather-container{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        font-size: 0.8em;
-        margin: 2em 0 0 0;
-    }
-
-    .main-weather-card,
-    .forecast-weather-card {
-        width: 50%;
-    }
-} */
 
 @media only screen and (max-width: 1024px) {
     /* Adjust styles for tablets and smaller screens here */
@@ -301,6 +282,15 @@ input{
         width: 100%;
     }
 
+    .card-one i,
+    .card-two i,
+    .card-three i,
+    .card-four i,
+    .card-five i,
+    .card-six i{
+        font-size: 1.6em;
+    }
+
     .card-one,
     .card-two,
     .card-three,
@@ -325,10 +315,12 @@ input{
         font-size: 0.8em;
         margin: 1em 0 0 0;
         height: 100%;
+        margin: 0em 0 0 0;
     }
     
     .main-weather-card,
     .forecast-weather-card {
+        margin-top: 4em;
         width: 90%;
     }
 
@@ -337,12 +329,7 @@ input{
     .visibility-info{
         width: 9em;
     }
-
-    body .main-weather-container{
-        margin: 0.5em 0 0 0;
-
-    }
-
+    
     .additional-info{
         padding-top: 1em;
     }
@@ -362,6 +349,15 @@ input{
     .card-five,
     .card-six{
         width: 9em;
+    }
+
+    .card-one i,
+    .card-two i,
+    .card-three i,
+    .card-four i,
+    .card-five i,
+    .card-six i{
+        font-size: 1.5em;
     }
 }
 
