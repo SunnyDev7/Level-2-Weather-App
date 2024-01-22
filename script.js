@@ -42,7 +42,7 @@ async function fetchWeatherByCity(cityName) {
       // Data retrieval successful
       console.log('Forecast Weather data:', forecastData);
       updateForecastUI(forecastData);
-      plotForecastChart(forecastData);
+      // plotForecastChart(forecastData);
     } else {
       // Data retrieval failed
       console.error('Error fetching weather data:', forecastData.message);
@@ -55,6 +55,7 @@ async function fetchWeatherByCity(cityName) {
 function updateMainUI(data){
     //Displaying data on main weather card.
     let cityElement = document.querySelector(".city");
+    let countryCode = document.querySelector(".country-code");
     let temperatureElement = document.querySelector(".temperature");
     let windSpeedElement = document.querySelector(".wind-speed");
     let humidityElement = document.querySelector(".humidity");
@@ -64,6 +65,7 @@ function updateMainUI(data){
     let descriptionIcon = document.querySelector(".descritpion i");
     
     cityElement.textContent = data.name;
+    countryCode.textContent = ",   "+data.sys.country;
     temperatureElement.textContent = `${Math.round(data.main.temp)}°`;
     windSpeedElement.textContent = `${data.wind.speed} km/h`;
     humidityElement.textContent = `${data.main.humidity}%`;
@@ -85,7 +87,7 @@ function getWeatherIcon(weatherCondition){
     Drizzle: "grain",
     Snow: "ac_unit",
     Mist: "cloud",
-    smoke: "cloud",
+    Smoke: "cloud",
     Haze: "cloud",
     Fog: "cloud", 
   }

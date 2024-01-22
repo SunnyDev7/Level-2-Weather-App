@@ -85,6 +85,19 @@ input{
     font-size: 3em;
 }
 
+.city-countrycode{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.country-code{
+    font-size: 2.5em;
+    padding: 0%;
+    margin-bottom: 1%;
+    margin-top: 2%;
+}
+
 .city-name-section .date{
     margin: 0%;
     padding: 2%;
