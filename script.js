@@ -2,6 +2,7 @@ const apiKey = '40e81a0253df81e2dee425c869917cbb';
 const baseUrlOne = 'https://api.openweathermap.org/data/2.5/weather';
 const baseUrlTwo = 'https://api.openweathermap.org/data/2.5/forecast';
 const units = 'metric'; // Setting the units to metric to get Celsius
+let barChart;
 
 // Function to fetch weather data by city name
 async function fetchWeatherByCity(cityName) {
@@ -42,7 +43,7 @@ async function fetchWeatherByCity(cityName) {
       // Data retrieval successful
       console.log('Forecast Weather data:', forecastData);
       updateForecastUI(forecastData);
-      // plotForecastChart(forecastData);
+      //plotForecastChart(forecastData);
     } else {
       // Data retrieval failed
       console.error('Error fetching weather data:', forecastData.message);
@@ -96,6 +97,13 @@ function getWeatherIcon(weatherCondition){
 }
 
 function updateForecastUI(data){
+
+  //Extracting data for the bar chart
+  const forecastTimes = data.list.slice(0, 6).map(entry => entry.dt_txt.split(' ')[1].substring(0, 5));
+  const forecastTemps = data.list.slice(0, 6).map(entry => entry.main.temp);
+
+  console.log(forecastTemps, forecastTimes);
+
   //Displaying data on weather today card
   let cardOneIcon = document.querySelector(".card-one i");
   let cardOneTemp = document.querySelector(".temp-one");
@@ -178,6 +186,42 @@ function updateForecastUI(data){
     }
   
     return iconMap[weatherCondition] || "help"
+  }
+
+  //Calling the chart function
+  plotForecastChart(forecastTimes, forecastTemps);
+}
+
+//Creating chart
+function plotForecastChart(labels, data){
+  const ctx = document.getElementById('forecastChart').getContext('2d');
+  // Check if the chart instance already exists
+  if (barChart) {
+    // If it exists, update the chart data
+    barChart.data.labels = labels;
+    barChart.data.datasets[0].data = data;
+    barChart.update(); // Update the chart
+  } else {
+    // If it doesn't exist, create a new chart
+    barChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Temperature Forecast',
+          data: data,
+          borderColor: 'rgba(255, 99, 132, 1)',
+          borderWidth: 5,
+        }],
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
+        },
+      },
+    });
   }
 }
 
