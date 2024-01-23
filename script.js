@@ -4,6 +4,15 @@ const baseUrlTwo = 'https://api.openweathermap.org/data/2.5/forecast';
 const units = 'metric'; // Setting the units to metric to get Celsius
 let barChart;
 
+// Function to automatically search for a default city on page load
+function autoSearchDefaultCity() {
+  const defaultCity = 'Ahmedabad'; // Set your default city here
+  fetchWeatherByCity(defaultCity);
+}
+
+// Attach the function to the DOMContentLoaded event
+document.addEventListener('DOMContentLoaded', autoSearchDefaultCity);
+
 document.addEventListener('DOMContentLoaded', function () {
   // On page load, create the chart with placeholder data
   plotForecastChart([], []);
@@ -213,7 +222,7 @@ function plotForecastChart(labels, data){
       data: {
         labels: labels,
         datasets: [{
-          label: 'Temperature Forecast',
+          label: 'Temperature Against Time',
           data: data,
           borderColor: 'rgba(255, 99, 132, 1)',
           borderWidth: 5,
